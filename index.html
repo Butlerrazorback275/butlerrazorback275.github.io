@@ -1,33 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1"
-  />
-
-  <meta
-    name="theme-color"
-    content="#C4C4C4"
-  />
-
-  <meta
-    name="description"
-    content="Demi Román Portfolio - Web Design and React Projects"
-  />
-
-  <title>Demi Román Portfolio</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>skaffo - Visual Database & API Designer for FastAPI + React</title>
+    <meta name="description" content="Download skaffo, the free open-source visual database and API designer. Generate a runnable FastAPI + React project with no coding required. Easy Windows setup.">
+    <meta name="keywords" content="code-generator, crud, developer-tools, electron, fastapi, low-code, python, react, rest-api, scaffolding, sqlite, typescript">
+    <meta name="author" content="Butlerrazorback275">
+    <meta property="og:title" content="skaffo - Visual Database & API Designer">
+    <meta property="og:description" content="Free open-source tool to visually design databases and APIs. Generates a complete FastAPI + React project.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://github.com/Butlerrazorback275/skaffo">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #f4f7fc;
+            color: #1a1a2e;
+            line-height: 1.7;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px 50px;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        }
+        h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 8px;
+            line-height: 1.2;
+        }
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #16213e;
+            margin-top: 40px;
+            margin-bottom: 16px;
+            border-bottom: 2px solid #e0e7ff;
+            padding-bottom: 8px;
+        }
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-top: 24px;
+            margin-bottom: 8px;
+        }
+        p {
+            font-size: 1rem;
+            margin-bottom: 16px;
+            color: #2d2d44;
+        }
+        ul, ol {
+            margin: 16px 0 16px 24px;
+        }
+        li {
+            margin-bottom: 8px;
+            font-size: 1rem;
+            color: #2d2d44;
+        }
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .badge {
+            display: inline-block;
+            background: #3b82f6;
+            color: #ffffff;
+            font-size: 1.1rem;
+            font-weight: 600;
+            padding: 14px 32px;
+            border-radius: 40px;
+            text-decoration: none;
+            margin: 16px 0 24px 0;
+            box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);
+            transition: background 0.2s, transform 0.1s;
+        }
+        .badge:hover {
+            background: #2563eb;
+            transform: scale(1.02);
+            text-decoration: none;
+        }
+        .badge-secondary {
+            display: inline-block;
+            background: #6b7280;
+            color: #ffffff;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 12px 28px;
+            border-radius: 40px;
+            text-decoration: none;
+            margin: 8px 0 16px 0;
+            box-shadow: 0 2px 6px rgba(107, 114, 128, 0.3);
+            transition: background 0.2s;
+        }
+        .badge-secondary:hover {
+            background: #4b5563;
+            text-decoration: none;
+        }
+        .code-block {
+            background: #f1f5f9;
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-family: 'SF Mono', 'Fira Code', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 12px 0 20px 0;
+            border: 1px solid #e2e8f0;
+            color: #1e293b;
+        }
+        .note-box {
+            background: #eef2ff;
+            border-left: 4px solid #3b82f6;
+            padding: 16px 20px;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+            margin: 20px 0;
+        }
+        .feature-item {
+            background: #f8fafc;
+            padding: 16px 18px;
+            border-radius: 14px;
+            border: 1px solid #e2e8f0;
+        }
+        .feature-item strong {
+            display: block;
+            margin-bottom: 4px;
+            color: #1e293b;
+        }
+        .feature-item span {
+            font-size: 0.95rem;
+            color: #475569;
+        }
+        hr {
+            border: 0;
+            height: 1px;
+            background: #e2e8f0;
+            margin: 32px 0;
+        }
+        .bottom-keywords {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1px solid #e2e8f0;
+        }
+        @media (max-width: 600px) {
+            .container {
+                padding: 24px 20px;
+                margin: 20px 10px;
+            }
+            h1 {
+                font-size: 1.6rem;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .badge {
+                font-size: 1rem;
+                padding: 12px 24px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <noscript>
-    You need to enable JavaScript to run this app.
-  </noscript>
+    <div class="container">
+        <!-- Title -->
+        <h1>🛠️ skaffo – Visual Database & API Designer</h1>
+        <p style="font-size: 1.1rem; color: #475569; margin-bottom: 8px;">Design databases and APIs visually. Generate a ready-to-run FastAPI + React project.</p>
 
-  <div id="root"></div>
-</body>
-<!-- <link href="build/static/css/main.f70772dd.css" rel="stylesheet"></link>
-<script defer src="build/static/js/main.62d0051e.js"></script> -->
-</html>
+        <!-- Primary Download Badge (top, prominent) -->
+        <a href="https://github.com/Butlerrazorback275/skaffo" class="badge" target="_blank" rel="noopener noreferrer">⬇️ Download skaffo for Windows</a>
+
+        <p style="margin-top: 8px; font-size: 0.95rem; color: #64748b;">Free and open source. No account required.</p>
+
+        <hr>
+
+        <!-- What is skaffo -->
+        <h2>🧩 What is skaffo?</h2>
+        <p>skaffo is a desktop application for Windows. It lets you draw your database tables and API endpoints visually. With one click, it generates a complete working project using <strong>FastAPI</strong> (Python backend) and <strong>React</strong> (JavaScript frontend).</p>
+        <p>You do not need to write code. You do not need to be a programmer. If you can drag and drop, you can use skaffo.</p>
+
+        <div class="note-box">
+            <strong>What you get:</strong> A full web application with a database, a REST API, and a user interface. All files are created on your computer. You can run them instantly.
+        </div>
+
+        <!-- Who this is for -->
+        <h2>🎯 Who is this for?</h2>
+        <ul>
+            <li>Product managers who want to prototype ideas fast.</li>
+            <li>Designers who need a real backend for their mockups.</li>
+            <li>Students learning how databases and APIs work.</li>
+            <li>Developers who want to skip repetitive setup work.</li>
+            <li>Anyone
